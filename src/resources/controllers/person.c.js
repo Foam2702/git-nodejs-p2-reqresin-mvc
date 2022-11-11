@@ -1,4 +1,5 @@
 const personM = require("../models/person.m");
+
 // const hbsH=require('../')
 exports.getAll = async (req, res, next) => {
   try {

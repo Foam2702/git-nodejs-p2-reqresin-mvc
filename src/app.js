@@ -3,7 +3,8 @@ const express = require("express"),
   hbs = require("express-handlebars"),
   path = require("path"),
   bodyparser = require("body-parser"),
-  personR = require("./resources/routers/person.r");
+  personR = require("./resources/routers/person.r"),
+  hbsH = require("./resources/helpers/hbsHelpers");
 (app = express()), (port = 3000);
 app.use(bodyparser.urlencoded({ extended: true }));
 
@@ -12,6 +13,7 @@ app.engine(
   hbs.engine({
     extname: ".hbs",
     defaultLayout: "container.hbs",
+    helpers: hbsH,
   })
 );
 app.set("view engine", "hbs");
